@@ -381,23 +381,27 @@
             <p class="section-tagline">Join our trajectory.</p>
             <p class="form-intro">For investors, partners, and talent interested in learning more.</p>
             
-            <form class="contact-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" placeholder="How can we collaborate?" rows="3"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
+            <form class="contact-form" action="https://formspree.io/f/mvgabbdl" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+    </div>
+    <div class="form-group">
+      <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="email" id="email" name="email" placeholder="Email Address" required>
+  </div>
+  <div class="form-group">
+    <textarea id="message" name="message" placeholder="How can we collaborate?" rows="3"></textarea>
+  </div>
+
+  <input type="hidden" name="_subject" value="New message from Acuro Capital">
+
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
         </div>
     </section>
     
