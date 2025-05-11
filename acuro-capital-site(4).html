@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acuro Capital | Solving Markets. Differently.</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #f2f2f2;
+            --accent-color: #888888;
+            --subtle-color: #222222;
+            --highlight-color: #bbbbbb;
+            --primary: #4a8dcc;
+            --secondary: #2a6dac;
+            --accent-blue: #00a5e3;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 8rem;
+            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            --font-mono: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 16px;
+            font-weight: 300;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        header {
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--subtle-color);
+        }
+        
+        .logo {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+            color: var(--text-color);
+        }
+        
+        .hero {
+            padding: var(--space-lg) 0;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            max-width: 15ch;
+            color: var(--text-color);
+        }
+        
+        .hero h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--accent-blue);
+            margin-bottom: var(--space-lg);
+            font-family: var(--font-mono);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 60ch;
+            margin-bottom: var(--space-md);
+        }
+        
+        .bold-statement {
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin: var(--space-md) 0;
+            max-width: 20ch;
+        }
+        
+        .hero .subdued {
+            color: var(--highlight-color);
+            font-size: 1rem;
+            max-width: 50ch;
+        }
+        
+        section {
+            padding: var(--space-lg) 0;
+            border-top: 1px solid var(--subtle-color);
+        }
+        
+        section h3 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: var(--space-md);
+            max-width: 20ch;
+        }
+        
+        .section-header {
+            margin-bottom: var(--space-md);
+        }
+        
+        .section-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            color: var(--accent-blue);
+            margin-bottom: var(--space-xs);
+            text-transform: uppercase;
+        }
+        
+        .section-tagline {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            max-width: 16ch;
+            line-height: 1.2;
+        }
+        
+        .accent-statement {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-top: var(--space-md);
+            padding-left: var(--space-md);
+            border-left: 3px solid var(--accent-blue);
+            color: var(--primary);
+        }
+        
+        section p {
+            max-width: 60ch;
+            color: var(--highlight-color);
+        }
+        
+        footer {
+            padding: var(--space-lg) 0;
+            border-top: 1px solid var(--subtle-color);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .footer-left {
+            max-width: 40ch;
+        }
+        
+        .footer-right {
+            text-align: right;
+        }
+        
+        .footer-nav {
+            list-style: none;
+            margin-bottom: var(--space-md);
+        }
+        
+        .footer-nav li {
+            margin-bottom: var(--space-xs);
+        }
+        
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: white;
+        }
+        
+        a::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--text-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s;
+        }
+        
+        a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .copyright {
+            margin-top: var(--space-md);
+            font-size: 0.8rem;
+            color: var(--accent-color);
+        }
+        
+        /* Contact Form Styles */
+        .form-intro {
+            margin-bottom: var(--space-md);
+            max-width: 50ch;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin-top: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-group {
+            flex: 1;
+            margin-bottom: var(--space-md);
+        }
+        
+        .contact-form input {
+            width: 100%;
+            padding: var(--space-sm);
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid var(--subtle-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .contact-form input:focus {
+            outline: none;
+            border-bottom-color: var(--accent-blue);
+        }
+        
+        .contact-form input::placeholder {
+            color: var(--accent-color);
+        }
+        
+        .contact-form textarea {
+            width: 100%;
+            padding: var(--space-sm);
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid var(--subtle-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 80px;
+            transition: border-color 0.3s;
+        }
+        
+        .contact-form textarea:focus {
+            outline: none;
+            border-bottom-color: var(--accent-blue);
+        }
+        
+        .contact-form textarea::placeholder {
+            color: var(--accent-color);
+        }
+        
+        .submit-btn {
+            padding: var(--space-sm) var(--space-md);
+            background-color: var(--accent-blue);
+            border: none;
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .bold-statement, .section-tagline {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-right {
+                text-align: left;
+                margin-top: var(--space-md);
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">ACURO CAPITAL</div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Solving Markets.<br>Differently.</h1>
+                <p>Acuro Capital is a quantitative trading firm that brings together world-class talent and cutting-edge AI to tackle the most intricate challenges in global markets — through relentless research, creativity, and precision.</p>
+                <p class="accent-statement">Built to unlock alpha others can't reach.</p>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Talent</span>
+                </div>
+                <p class="section-tagline">We unite exceptional minds.</p>
+                <p>Acuro Capital operates at the intersection of mathematics, engineering, and financial markets. With teams in Singapore and India, we access elite talent while trading globally.</p>
+                <p>We curate a team of the world's sharpest minds to design the models and systems behind our trading decisions — thinkers who've mastered complexity, not just credentials. We value raw intellect over convention, clarity over hierarchy, and deep problem-solving over surface-level execution.</p>
+                <p>If you're a code-native thinker, a systems architect, or someone who sees markets through abstraction — this is your arena.</p>
+                <p class="accent-statement">Talent obsessed. Intellect first. Built by the top 0.1%.</p>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Technology</span>
+                </div>
+                <p class="section-tagline">We build the impossible.</p>
+                <p>We build at the convergence of compute, intelligence, and engineering. High-performance infrastructure optimized for low-latency execution, proprietary AI systems that learn from data and adapt to regimes, and code that compiles into advantage. From our research stacks to live trading engines, we engineer systems with precision, resilience, and intent.</p>
+                <p class="accent-statement">We don't rent intelligence. We build it — and scale it to perform.</p>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Trading</span>
+                </div>
+                <p class="section-tagline">We find alpha where others see noise.</p>
+                <p>Acuro Capital trades across global markets — equities, commodities, fixed income, and currencies — through systems built for precision, adaptability, and speed. Every strategy is grounded in research, battle-tested at scale, and deployed through proprietary infrastructure with disciplined risk management. We don't bet on noise. We solve for structure — with models that learn, evolve, and deliver alpha where others fall behind.</p>
+                <p class="accent-statement">This isn't about reacting. It's about engineering excellence.</p>
+            </div>
+        </section>
+    </main>
+    
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Connect</span>
+            </div>
+            <p class="section-tagline">Join our trajectory.</p>
+            <p class="form-intro">For investors, partners, and talent interested in learning more.</p>
+            
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="How can we collaborate?" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="logo">ACURO CAPITAL</div>
+                </div>
+                <div class="footer-right">
+                    <ul class="footer-nav">
+                        <li>Singapore | India</li>
+                        <li><a href="mailto:info@acuro.capital">info@acuro.capital</a></li>
+                        <li><a href="https://www.linkedin.com/company/acuro-capital" target="_blank">LinkedIn ↗</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">© 2025 Acuro Capital</div>
+        </div>
+    </footer>
+</body>
+</html>
