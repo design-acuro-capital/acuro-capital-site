@@ -44,10 +44,15 @@
             padding: 0 var(--space-md);
         }
         
-        header {
-            padding: var(--space-md) 0;
-            border-bottom: 1px solid var(--subtle-color);
-        }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-color);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--subtle-color);
+}
+
         
         .logo {
             font-family: var(--font-mono);
